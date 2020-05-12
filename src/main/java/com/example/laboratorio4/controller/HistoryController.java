@@ -25,6 +25,7 @@ public class HistoryController {
     @Autowired
     DepartmentsRepository departmentsRepository;
 
+    @GetMapping(value="/listahlista")
     public String historialEmpleado(Model model){
 
         model.addAttribute("historialEmpleado", historyRepository.historialEmpleados());
@@ -34,4 +35,6 @@ public class HistoryController {
         model.addAttribute("listaJefes",employeesRepository.findAll());
         return "history/lista";
     }
+
+
 }
