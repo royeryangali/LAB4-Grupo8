@@ -18,7 +18,9 @@ public interface EmployeesRepository extends JpaRepository<Employees,Integer> {
             "INNER JOIN locations l on (d.location_id=l.location_id)\n" +
             "INNER JOIN countries c on (l.country_id=c.country_id)\n" +
             "INNER JOIN regions r on (r.region_id=c.region_id)\n" +
-            "WHERE e.first_name = ?1 OR e.last_name= ?2 OR j.job_title = ?3 OR d.department_name = ?4 OR l.city=?5;",nativeQuery=true)
+            "WHERE e.first_name = ?1 OR e.last_name= ?1 OR j.job_title = ?1 OR d.department_name = ?1 OR l.city=?1;",nativeQuery=true)
     List<EmpleadoPorSearch> empleadoporSearch ();
+
+
 
 }
