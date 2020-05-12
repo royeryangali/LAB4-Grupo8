@@ -21,7 +21,11 @@
         </tr>
         </thead>
         <tbody>
-            <!-- COMPLETAR -->
+        <tr th:each="s : ${listaSalarioMaxDepartamento}">
+            <td th:text="${s.getID()}"></td>
+            <td th:text="${s.getDepartamento()}"></td>
+            <td th:text="${s.getPromedio()}"></td>
+        </tr>
         </tbody>
     </table>
 </div>

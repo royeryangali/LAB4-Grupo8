@@ -44,9 +44,8 @@ public class SearchController {
     }
 
     @GetMapping(value = "/Filtro2")
-    public String cantidadEmpleadosPorPais() {
-
-        //COMPLETAR
+    public String cantidadEmpleadosPorPais(Model model) {
+        model.addAttribute("listaSalarioMaxDepartamento",historyRepository.reporteSalarioMaximo());
         return "/Search/salario";
     }
 
