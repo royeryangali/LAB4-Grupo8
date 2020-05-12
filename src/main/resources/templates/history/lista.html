@@ -26,11 +26,14 @@
         </tr>
         </thead>
         <tbody>
-        <tr th:each="historia : ${listaHistorial}">
-            <td th:text="${historia.firstname}"></td>
-            <td th:text="${historia.lastname}"></td>
-            <td th:text="${historia.}"></td>
-            <td th:text="${employee.departmentid.departmentname}"></td>
+        <tr th:each="historial : ${historialEmpleado}">
+            <td th:text="${historial.nombre}"></td>
+            <td th:text="${historial.apellido}"></td>
+            <td th:text="${historial.puesto}"></td>
+            <td th:text="${historial.fechainicio}"></td>
+            <td th:text="${historial.fechafin}"></td>
+            <td th:text="${historial.aniosTrabajados}"></td>
+            <td th:text="${historial.mesesTrabajados}"></td>
         </tr>
         </tbody>
     </table>
