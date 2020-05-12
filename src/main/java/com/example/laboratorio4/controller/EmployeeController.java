@@ -114,10 +114,10 @@ public class EmployeeController {
     }
 
 
-    @GetMapping(value="/lista2")
-    public String mayorSalario(Model model){
-        model.addAttribute("empleadoMayorSalario", employeesRepository.empleadoMayorSalario());
-        return "Search/lista2";
-    }
+   // @GetMapping(value="/lista2")
+    //public String mayorSalario(Model model){
+    //    model.addAttribute("empleadoMayorSalario", employeesRepository.empleadoMayorSalario());
+    //  return "Search/lista2";
+    //}
 
 }
