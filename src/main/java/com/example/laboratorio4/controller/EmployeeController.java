@@ -10,7 +10,6 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import javax.jws.WebParam;
 import javax.validation.Valid;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -41,7 +40,7 @@ public class EmployeeController {
     @GetMapping("/new")
     public String nuevoEmployeeForm(Model model, @ModelAttribute("employees") Employees employees) {
         model.addAttribute("listaJefes", employeesRepository.findAll());
-        model.addAttribute("listaDepartamentos", departmentsRepository.findAll());
+        model.addAttribute("listaDepartament", departmentsRepository.findAll());
         return "employee/Frm";
     }
 
@@ -53,7 +52,7 @@ public class EmployeeController {
         if(bindingResult.hasErrors()){
             model.addAttribute("listaJobs", jobsRepository.findAll());
             model.addAttribute("listaJefes", employeesRepository.findAll());
-            model.addAttribute("listaDepartments", departmentsRepository.findAll());
+            model.addAttribute("listaDepartment", departmentsRepository.findAll());
             return "employee/Frm";
         }else {
 
@@ -86,7 +85,7 @@ public class EmployeeController {
             model.addAttribute("employees", employees);
             model.addAttribute("listaJefes", employeesRepository.findAll());
             model.addAttribute("listaDepartments", departmentsRepository.findAll());
-            return "employee/newFrm";
+            return "employee/Frm";
         } else {
             return "redirect:/employee";
         }
