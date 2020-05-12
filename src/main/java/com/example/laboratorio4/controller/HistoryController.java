@@ -27,7 +27,7 @@ public class HistoryController {
 
     public String historialEmpleado(Model model){
 
-        model.addAttribute("historialEmpleado", historyRepository.findAll());
+        model.addAttribute("historialEmpleado", historyRepository.historialEmpleados());
         model.addAttribute("listaJobs", jobsRepository.findAll());
         model.addAttribute("listaDepartments", departmentsRepository.findAll());
         model.addAttribute("listaEmployees", employeesRepository.findAll());

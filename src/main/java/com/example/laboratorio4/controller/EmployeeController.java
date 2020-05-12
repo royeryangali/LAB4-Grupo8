@@ -112,5 +112,10 @@ public class EmployeeController {
         model.addAttribute("listaEmpleadoPorSearch", employeesRepository.empleadoporSearch(busqueda));
         return "redirect:/employee";
     }
+    @GetMapping(value="/lista2")
+    public String mayorSalario(Model model){
+        model.addAttribute("empleadoMayorSalario", employeesRepository.empleadoMayorSalario());
+        return "Search/lista2";
+    }
 
 }
