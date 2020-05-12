@@ -32,6 +32,7 @@ public class HistoryController {
         model.addAttribute("listaDepartments", departmentsRepository.findAll());
         model.addAttribute("listaEmployees", employeesRepository.findAll());
         model.addAttribute("listaJefes",employeesRepository.findAll());
+
         return "history/lista";
     }
 }
