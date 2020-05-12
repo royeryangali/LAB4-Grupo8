@@ -1,6 +1,7 @@
 package com.example.laboratorio4.repository;
 
 import com.example.laboratorio4.dto.EmpleadoPorSearch;
+import com.example.laboratorio4.dto.EmpleadosPorDepartamento;
 import com.example.laboratorio4.dto.RecursosHumanos;
 import com.example.laboratorio4.dto.ReporteSalarioMaximo;
 import com.example.laboratorio4.entity.History;
@@ -19,5 +20,7 @@ public interface HistoryRepository extends JpaRepository<History,Integer> {
     @Query(value="SELECT d.department_id as ID, d.department_name as Departamento, ROUND(AVG(e.salary)) as Promedio FROM employees e INNER JOIN departments d ON (e.department_id=d.department_id) GROUP BY d.department_name ORDER BY Promedio DESC",nativeQuery = true)
     List<ReporteSalarioMaximo> reporteSalarioMaximo();
 
-    @Query
+    @Query()
+    List<EmpleadosPorDepartamento> empleadosPorDepartamento();
+
 }
