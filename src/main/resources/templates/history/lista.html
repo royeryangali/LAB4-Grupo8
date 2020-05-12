@@ -16,15 +16,46 @@
         <table class="table">
         <thead>
         <tr>
-            <!-- COMPLETAR-->
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Cargo</th>
+            <th>Fecha Inicio</th>
+            <th>Fecha Fin</th>
+            <th>Años trabajados</th>
+            <th>Meses trabajados</th>
         </tr>
         </thead>
         <tbody>
         <tr th:each="historia : ${listaHistorial}">
-        <!-- COMPLETAR-->
+            <td th:text="${historia.firstname}"></td>
+            <td th:text="${historia.lastname}"></td>
+            <td th:text="${historia.}"></td>
+            <td th:text="${employee.departmentid.departmentname}"></td>
         </tr>
         </tbody>
     </table>
 </div>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
