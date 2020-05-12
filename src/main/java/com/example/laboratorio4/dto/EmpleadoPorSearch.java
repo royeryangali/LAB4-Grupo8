@@ -9,7 +9,6 @@ String getCargo();
 int getSalario();
 String getJefe();
 String getDepartamento();
-
 }
 
 
