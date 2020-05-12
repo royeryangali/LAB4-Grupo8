@@ -108,8 +108,8 @@ public class EmployeeController {
     }
 
     @PostMapping("/search")
-    public String buscar (){
-
+    public String buscar (@RequestParam("search") String busqueda, Model model){
+        model.addAttribute("listaEmpleadoPorSearch", employeesRepository.empleadoporSearch(busqueda));
         return "redirect:/employee";
     }
 

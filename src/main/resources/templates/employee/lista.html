@@ -11,7 +11,7 @@
 <body>
     <div class="container">
         <h1>Lista de Empleados</h1>
-        <a class="btn btn-primary mt-4 mb-4" th:href="@{}">Nuevo Empleado</a>
+        <a class="btn btn-primary mt-4 mb-4" th:href="@{'/employee/new'}">Nuevo Empleado</a>
 
         <form class="input-group mb-lg-3" method="post" th:action="@{'/employee/search'}">
             <input type="text" class="form-control" placeholder="Texto a buscar" name="search">
