@@ -1,4 +1,4 @@
-package com.example.laboratorio3.entity;
+package com.example.laboratorio4.entity;
 
 import com.example.laboratorio4.entity.Departments;
 import com.example.laboratorio4.entity.Jobs;
