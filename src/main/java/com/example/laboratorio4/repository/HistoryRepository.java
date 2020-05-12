@@ -12,6 +12,6 @@ import java.util.List;
 public interface HistoryRepository extends JpaRepository<History,Integer> {
 
     @Query(value ="SELECT e.first_name as Nombre, e.last_name as Apellido, j.job_title as Cargo, jh.start_date as FechaInicio,jh.end_date as FechaFin,timestampdiff(YEAR,  jh.start_date,jh.end_date) as AniosTrabajados, timestampdiff(MONTH, jh.start_date,jh.end_date) as MesesTrabajados FROM employees e INNER JOIN job_history jh ON (e.employee_id=jh.employee_id) INNER JOIN jobs j ON (j.job_id=e.job_id) ORDER BY AniosTrabajados DESC",nativeQuery=true)
-    List<EmpleadoPorSearch> empleadoporSearch (String busqueda);
+    List<EmpleadoPorSearch> historialEmpleados (String busqueda);
 
 }
