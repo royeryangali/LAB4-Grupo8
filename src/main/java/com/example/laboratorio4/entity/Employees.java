@@ -5,6 +5,8 @@ import com.example.laboratorio4.entity.Jobs;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 import java.util.Date;
 
 @Entity
@@ -15,26 +17,43 @@ public class Employees {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "employee_id")
     private int employeeid;
+
     @Column(name = "first_name")
+    @NotBlank
     private String firstname;
+
     @Column(name = "last_name",nullable = false)
+    @NotBlank
     private String lastname;
+
     @Column(nullable = false)
+    @NotBlank
     private String email;
+
+    @NotBlank
+    @Size(min=8, message = "contraseña deberá de tener un mínimo de 8 caracteres")
     private String password;
+
     @Column(name = "phone_number")
     private String phonenumber;
+
     @Column(name = "hire_date")
     private Date hiredate;
+
     @ManyToOne
     @JoinColumn(name = "job_id")
     private Jobs jobid;
+
+    @NotBlank
     private int salary;
+
     @Column(name = "manager_id")
     private Integer managerid;
+
     @ManyToOne
     @JoinColumn(name = "department_id")
     private Departments departmentid;
+
     private int enabled;
 
     public int getEmployeeid() {
